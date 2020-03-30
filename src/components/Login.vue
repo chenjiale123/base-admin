@@ -49,14 +49,15 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login () {
-      this.$refs.loginFormRef.validate(async valid => {
-        if (!valid) return false
-        const { data: res } = await this.$http.post('login', this.loginForm)
-        if (res.meta.status !== 200) return this.$message.error('登陆失败!')
-        this.$message.success('登陆成功!')
-        window.sessionStorage.setItem('token', res.data.token)
-        this.$router.push('/home')
-      })
+      this.$router.push('/welcome')
+      // this.$refs.loginFormRef.validate(async valid => {
+      //   if (!valid) return false
+      //   const { data: res } = await this.$http.post('login', this.loginForm)
+      //   if (res.meta.status !== 200) return this.$message.error('登陆失败!')
+      //   this.$message.success('登陆成功!')
+      //   window.sessionStorage.setItem('token', '2222222222222')
+        // this.$router.push('/home')
+      // })
     }
   }
 }
